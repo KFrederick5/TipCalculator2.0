@@ -17,6 +17,7 @@ public class RestaurantBill {
     private double mTipPercent;
     private double mTipAmount;
     private double mTotalAmount;
+    private double mTaxAmount;
 
     /**
      * Creates a new restaurant bill with default values.
@@ -27,6 +28,7 @@ public class RestaurantBill {
         mTipPercent = 0.0;
         mTipAmount = 0.0;
         mTotalAmount = 0.0;
+        mTaxAmount = 0.0;
     }
 
     /**
@@ -76,6 +78,14 @@ public class RestaurantBill {
     }
 
     /**
+     * Gets the tax value and returns it for calculation
+     * @return the total tax
+     */
+    public double getTaxAmount() {
+        return mTaxAmount;
+    }
+
+    /**
      * Sets the amount given by the user and
      * recalculates all the dependent values
      * @param mAmount sets the amount the user entered
@@ -96,12 +106,23 @@ public class RestaurantBill {
     }
 
     /**
+     * Will set the tax amount based on the users
+     * location, in the future.
+     * @param mTaxAmount sets tax amount based on users gps locale
+     */
+    public void setTaxAmount(double mTaxAmount) {
+        this.mTaxAmount = mTaxAmount;
+        recalcAmounts();
+    }
+
+    /**
      * Recalculates the amounts of total and percent values using
      * the user entered amount and tip percent seek bar.
      */
     private void recalcAmounts()
     {
+        mTaxAmount = mAmount*(.08);
         mTipAmount = mAmount*mTipPercent;
-        mTotalAmount = mAmount + mTipAmount;
+        mTotalAmount = mAmount + mTipAmount + mTaxAmount;
     }
 }

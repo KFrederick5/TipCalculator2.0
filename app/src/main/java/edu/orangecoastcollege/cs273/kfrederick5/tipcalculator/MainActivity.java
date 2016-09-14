@@ -26,6 +26,7 @@ public class MainActivity extends AppCompatActivity {
     private SeekBar percentSeekBar;
     private TextView tipTextView;
     private TextView totalTextView;
+    private TextView taxTextView;
 
     //Associate the controller with needed model
     RestaurantBill currentBill = new RestaurantBill();
@@ -42,6 +43,7 @@ public class MainActivity extends AppCompatActivity {
         percentSeekBar = (SeekBar) findViewById(R.id.percentSeekBar);
         tipTextView = (TextView) findViewById(R.id.tipTextView);
         totalTextView = (TextView) findViewById(R.id.totalTextView);
+        taxTextView = (TextView) findViewById(R.id.taxTextView);
 
         //Define a listener for the amountEditText onTextChange
         amountEditText.addTextChangedListener(amountTextChangedListener);
@@ -116,6 +118,8 @@ public class MainActivity extends AppCompatActivity {
         tipTextView.setText(currency.format(currentBill.getTipAmount()));
         //3)Set Total amount
         totalTextView.setText(currency.format(currentBill.getTotalAmount()));
+        //4)Set Tax amount
+        taxTextView.setText(currency.format(currentBill.getTaxAmount()));
     }
 }
 

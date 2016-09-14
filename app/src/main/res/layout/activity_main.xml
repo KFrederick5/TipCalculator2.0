@@ -62,9 +62,8 @@
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
         android:id="@+id/tipView"
-        android:layout_row="2"
+        android:layout_row="3"
         android:layout_column="0"
-        android:editable="true"
         android:text="@string/tip_text" />
 
     <TextView
@@ -73,7 +72,7 @@
         android:textAppearance="?android:attr/textAppearanceSmall"
         android:text="$0.00"
         android:id="@+id/tipTextView"
-        android:layout_row="2"
+        android:layout_row="3"
         android:layout_column="1"
         android:background="#ffe0b2"
         android:padding="12dp"
@@ -84,9 +83,8 @@
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
         android:id="@+id/amountView"
-        android:layout_row="3"
+        android:layout_row="4"
         android:layout_column="0"
-        android:editable="true"
         android:text="@string/total_text" />
 
     <TextView
@@ -95,7 +93,28 @@
         android:textAppearance="?android:attr/textAppearanceSmall"
         android:text="$0.00"
         android:id="@+id/totalTextView"
-        android:layout_row="3"
+        android:layout_row="4"
+        android:layout_column="1"
+        android:background="#ffe0b2"
+        android:layout_gravity="fill_horizontal"
+        android:padding="12dp"
+        android:elevation="4dp" />
+
+    <TextView
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:id="@+id/tax_amount"
+        android:layout_row="2"
+        android:layout_column="0"
+        android:text="@string/tax_amount" />
+
+    <TextView
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:textAppearance="?android:attr/textAppearanceSmall"
+        android:text="$0.00"
+        android:id="@+id/taxTextView"
+        android:layout_row="2"
         android:layout_column="1"
         android:background="#ffe0b2"
         android:layout_gravity="fill_horizontal"
